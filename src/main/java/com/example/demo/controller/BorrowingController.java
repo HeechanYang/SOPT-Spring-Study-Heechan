@@ -23,7 +23,7 @@ public class BorrowingController {
     }
 
     @GetMapping
-    public List<Borrowing> getBorrowing(@RequestParam(value = "memberId", required = false, defaultValue = "0") int memberId,
+    public List<Borrowing> getBorrowings(@RequestParam(value = "memberId", required = false, defaultValue = "0") int memberId,
                                         @RequestParam(value = "bookId", required = false, defaultValue = "0") int bookId) {
         return borrowingService.searchBorrowings(memberId, bookId);
     }

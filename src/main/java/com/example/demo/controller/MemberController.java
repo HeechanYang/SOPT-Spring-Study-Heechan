@@ -1,6 +1,9 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Member;
+import com.example.demo.dto.request.InsertMemberRequestDTO;
+import com.example.demo.dto.request.UpdateMemberRequestDTO;
+import com.example.demo.dto.response.MemberDetailResponseDTO;
+import com.example.demo.dto.response.MemberSimpleResponseDTO;
 import com.example.demo.service.MemberService;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,23 +20,23 @@ public class MemberController {
     }
 
     @PostMapping
-    public boolean saveMember(@RequestBody Member newMember){
+    public boolean saveMember(@RequestBody InsertMemberRequestDTO newMember){
         return memberService.saveMember(newMember);
     }
 
     @GetMapping
-    public List<Member> getAllMembers(){
+    public List<MemberSimpleResponseDTO> getAllMembers(){
         return memberService.getAllMembers();
     }
 
     @GetMapping("/{memberId}")
-    public Member getMember(@PathVariable("memberId") int memberId){
+    public MemberDetailResponseDTO getMember(@PathVariable("memberId") int memberId){
         return memberService.getMemberById(memberId);
     }
 
     @PutMapping("/{memberId}")
     public boolean putMember(@PathVariable("memberId") int memberId,
-                               @RequestBody Member puttedMember){
+                               @RequestBody UpdateMemberRequestDTO puttedMember){
         return memberService.putMember(memberId, puttedMember);
     }
 
