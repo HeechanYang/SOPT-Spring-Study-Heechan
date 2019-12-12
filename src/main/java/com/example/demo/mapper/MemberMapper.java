@@ -17,6 +17,8 @@ public interface MemberMapper {
 
     public Member getMemberById(@Param("id") int id);
 
+    public Member getMemberByEmail(@Param("email") String email);
+
     public int insertMember(@Param("member") InsertMemberRequestDTO member);
 
     public int updateMember(@Param("id") int id, @Param("member") UpdateMemberRequestDTO member);

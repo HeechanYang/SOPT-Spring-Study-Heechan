@@ -16,6 +16,10 @@
         SELECT * FROM member WHERE id = #{id};
     </select>
 
+    <select id="getMemberByEmail" resultType="com.example.demo.model.Member">
+        SELECT * FROM member WHERE email = #{email};
+    </select>
+
     <update id="updateMember" useGeneratedKeys="true">
         UPDATE member SET email = #{member.email}, password = #{member.password}
                         , name = #{member.name}, phone_number = #{member.phoneNumber}

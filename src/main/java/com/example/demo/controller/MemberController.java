@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.request.InsertMemberRequestDTO;
+import com.example.demo.dto.request.SignInRequestDTO;
 import com.example.demo.dto.request.UpdateMemberRequestDTO;
 import com.example.demo.dto.response.MemberDetailResponseDTO;
 import com.example.demo.dto.response.MemberSimpleResponseDTO;
@@ -22,6 +23,11 @@ public class MemberController {
     @PostMapping
     public boolean saveMember(@RequestBody InsertMemberRequestDTO newMember){
         return memberService.saveMember(newMember);
+    }
+
+    @PostMapping
+    public MemberDetailResponseDTO signIn(@RequestBody SignInRequestDTO signInRequestDTO){
+        return memberService.signIn(signInRequestDTO);
     }
 
     @GetMapping

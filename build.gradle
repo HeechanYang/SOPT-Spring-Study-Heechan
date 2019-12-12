@@ -31,6 +31,9 @@ dependencies {
 	//lombok
 	runtimeOnly 'org.projectlombok:lombok:1.18.10'
 	annotationProcessor 'org.projectlombok:lombok:1.18.10'
+
+	// spring-security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 }
 
 test {
